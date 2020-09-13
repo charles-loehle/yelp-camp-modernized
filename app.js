@@ -22,6 +22,7 @@ connectDB();
 // route files
 const landingRoutes = require('./routes/landing');
 const campgroundRoutes = require('./routes/campgrounds');
+const commentRoutes = require('./routes/comments');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(express.json());
 // mount routers
 app.use('/', landingRoutes);
 app.use('/campgrounds', campgroundRoutes);
+app.use('/campgrounds/:id/comments', commentRoutes);
 
 const PORT = process.env.PORT || 5000;
 

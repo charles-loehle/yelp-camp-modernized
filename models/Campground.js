@@ -11,6 +11,8 @@ const CampgroundSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description: { type: String },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
 });
 
 module.exports = mongoose.model('Campground', CampgroundSchema);
